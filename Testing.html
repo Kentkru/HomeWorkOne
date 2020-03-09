@@ -9,7 +9,6 @@
 
 <script>
 
-  
 
     function validate(){
     	var login = document.getElementById("text1").value;
@@ -18,34 +17,26 @@
   		.then(json => compare(json,login))
     }
 
-
-
-
-
     function compare(data,login){
         var i;
     	for (i=0;i<data.length;i++){
     		if(data[i].username ==login){
     			console.log("success");
     			hide();
+                document.getElementById("name").innerHTML = data[i].name;
     		}
 
     	}
-    	if(x.style.display!="none"){
-
-    	}
 
     }
-    var x = document.getElementById("text1");
-    var y = document.getElementById("submit");
-    var z = document.getElementById("err");
+
     function hide(){
-    	x.style.display="none";
-    	y.style.display="none";
-    	z.style.display="none";
-    }
-    function loadProfile(){
-
+        var x = document.getElementById("text1");
+        var y = document.getElementById("submit");
+        var z = document.getElementById("err");
+    	x.style.display= "none";
+    	y.style.display= "none";
+    	z.style.display= "none";
     }
 
 </script>
@@ -53,6 +44,9 @@
 	<input id="text1" placeholder="Username">
 	<button onclick="validate()" id="submit" >Submit</button>
 	<p id="err"><p>
+    <div id = "name"></div>
+    <div id ="titles"></div>
+    <div id="albums"></div>
 
 
 
