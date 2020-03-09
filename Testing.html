@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+<script>
+
+  
+
+    function validate(){
+    	var login = document.getElementById("text1").value;
+    	fetch('https://jsonplaceholder.typicode.com/users')
+  		.then(response => response.json())
+  		.then(json => compare(json,login))
+    }
+
+
+
+
+
+    function compare(data,login){
+        var i;
+    	for (i=0;i<data.length;i++){
+    		if(data[i].username ==login){
+    			console.log("success");
+    			hide();
+    		}
+
+    	}
+    	if(x.style.display!="none"){
+
+    	}
+
+    }
+    var x = document.getElementById("text1");
+    var y = document.getElementById("submit");
+    var z = document.getElementById("err");
+    function hide(){
+    	x.style.display="none";
+    	y.style.display="none";
+    	z.style.display="none";
+    }
+    function loadProfile(){
+
+    }
+
+</script>
+
+	<input id="text1" placeholder="Username">
+	<button onclick="validate()" id="submit" >Submit</button>
+	<p id="err"><p>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+
+</body>
+	
+</html>
